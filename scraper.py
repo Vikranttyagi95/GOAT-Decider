@@ -17,10 +17,15 @@ for player in players:
 
     for tag in soup.find_all(class_='date'):
         val = tag.string
-        if ":" in val:
-            key = val.split(':')[0]
-            value = val.split(':')[1].lstrip()
-            player_info.append({key:value})
+        player_info.append(val)
+
+    text_file = open(f"Data\Info\{player}_info.txt", 'w')    #  Opening the text file
+
+    for element in player_info[:-2]:
+        text_file.write(element + "\n")                      #  Writing Info to the text file
+
+    text_file.close()                                        #  Closing the text file
+
 
     #  Finding the table for player stats
 
@@ -40,13 +45,10 @@ for player in players:
         final_stats.append(lst)
 
 
-
     #  Creating a dataframe
-    pdf = pd.DataFrame(player_info)
 
     df = pd.DataFrame(final_stats)
     df = df.T
     df.columns = ["Year","Summary","Clay","Hard","Indoor","Grass","Not Set"]
     df = df.astype(str)
-    pdf.to_csv(f"{player}_info.csv", index=False)
-    df.to_csv(f"{player}_stats.csv", index=False)
+    df.to_csv(f"Data\Stats\{player}_stats.csv", index=False)
