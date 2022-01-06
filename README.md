@@ -7,3 +7,7 @@
 
 ### Data Collection
   - For data collection, I scraped the data off of this [tennis website](https://tennisexplorer.com) using BeautifulSoup
+### Data Cleaning
+  - For data cleaning and transformation part, I used Pandas library
+### Data Visualization
+  - For data Visualization, I created a web app using Streamlit library
