@@ -5,6 +5,10 @@
   - Rafael Nadal
   - Novak Djokovic
 
+### Dashboard Overview
+
+![Dashboard](/Images/ss.png)
+
 ### Data Collection
   - For data collection, I scraped the data off of this [tennis website](https://tennisexplorer.com) using BeautifulSoup
 ### Data Cleaning
